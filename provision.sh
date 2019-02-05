@@ -19,11 +19,15 @@ then
   systemctl enable sysstat
 
 
-   wget //github.com/datacharmer/dbdeployer/releases/download/1.17.1/dbdeployer-1.17.1-docs.linux.tar.gz
+   wget https://github.com/datacharmer/dbdeployer/releases/download/1.17.1/dbdeployer-1.17.1-docs.linux.tar.gz
    tar xzf dbdeployer-1.17.1-docs.linux.tar.gz
    mv dbdeployer-1.17.1-docs.linux /usr/bin/dbdeployer
    wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.11-linux-glibc2.12-x86_64.tar.gz
+   mkdir /opt/mysql
+   mv mysql-8.0.11-linux-glibc2.12-x86_64.tar.gz /opt/mysql
+   cd /opt/mysql/
    dbdeployer --sandbox-binary=/opt/mysql/ unpack mysql-8.0.11-linux-glibc2.12-x86_64.tar.gz
+   dbdeployer --sandbox-binary=/opt/mysql/ deploy single 8.0.11
 
 
 
