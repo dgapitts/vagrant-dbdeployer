@@ -1,8 +1,8 @@
-== vagrant-dbdeployer ==
+== vagrant-dbdeployer 
 Centos 7 VM Running dbdeployer 
 
 
-== Basic Tests ==
+== Basic Tests 
 
 After running `vagrant up` (takes a while to download 600Mb mysql binary)
 
